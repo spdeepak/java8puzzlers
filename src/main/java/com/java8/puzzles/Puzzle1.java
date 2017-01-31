@@ -17,7 +17,7 @@ public class Puzzle1 {
         list.add("Butter");
         Stream<String> stream = list.stream();
         list.add("Eggs");
-        //Due to late binding i.e., Streams are laxy eggs will be displayed
+        //Due to late binding i.e., Streams are lazy. So, eggs will be displayed
         stream.forEach(System.out::println);
     }
 }

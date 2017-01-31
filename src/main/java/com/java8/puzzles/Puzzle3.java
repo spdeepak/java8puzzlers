@@ -17,7 +17,12 @@ public class Puzzle3 {
     public static void main(String[] args) {
         ExecutorService ex = Executors.newSingleThreadExecutor();
         List<String> sentence = Arrays.asList("Punish");
+
+        //It's Callable and it matches the return type and the exception thrown by this is rethrown by callable interface
+        //outside the method this line of code is executed
         ex.submit(() -> Files.write(Paths.get("sentence.txt"), sentence));
+
+        //The bleow code does not execute as it throws a checked exception and it is not taken care of
         ex.submit(() ->
             {
                 try {

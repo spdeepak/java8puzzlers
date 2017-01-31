@@ -18,6 +18,7 @@ public class Puzzle2 {
         list = list.subList(0, 2);
         Stream<String> stream = list.stream();
         list.add("Eggs");
+        //We get ConcurrentModificationException. It's a bug
         stream.forEach(System.out::println);
     }
 }
